@@ -1,0 +1,254 @@
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; 
+}
+
+p, span, td, li {
+  font-weight: 400; 
+}
+
+button {
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+}
+
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 20%;
+  height: 100%;
+  background-color: #002855; 
+  color: #fff;
+  transition: 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.sidebar .profile-section span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sidebar .menu ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.sidebar .menu ul li {
+  display: flex; 
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.sidebar .menu ul li img {
+  width: 20px; 
+  margin-right: 10px;
+}
+
+.sidebar .menu ul li span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e; 
+}
+
+.sidebar .menu ul li.active {
+  background-color: #00509e; 
+  color: #f7f9fc; 
+}
+
+
+.main-content {
+  flex: 1;
+  margin-left: 20%; 
+  padding: 20px;
+  background-color: #f7f9fc;
+  min-height: 100vh;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #34495e;
+}
+
+.header .logout {
+  text-decoration: none;
+  color: #34495e;
+  font-weight: bold;
+}
+
+/* Biodata Admin */
+.biodata-admin {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section {
+  text-align: center;
+  width: 200px;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: auto;
+}
+
+.change-foto {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #233255;
+  color: white;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.biodata-table {
+  flex: 1;
+}
+
+.biodata-table h2 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.biodata-table .arrow {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.biodata-table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  color: #333;
+}
+
+.biodata-table table td {
+  padding: 8px;
+  line-height: 1.5;
+}
+
+.biodata-table table td:first-child {
+  font-weight: bold;
+  color: #34495e;
+  width: 150px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-section {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+  }
+
+  .filter-section select,
+  .filter-section .lihat-button {
+      width: 100%;
+  }
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #002855;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  background: #00509e;
+}
+
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 70%; 
+      left: -70%; 
+  }
+
+  .sidebar.active {
+      left: 0; 
+  }
+
+  .main-content {
+      margin-left: 0; 
+  }
+
+  .hamburger {
+      display: block; 
+  }
+}
+
+

@@ -1,0 +1,282 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Tersembunyi secara default */
+    width: 250px; /* Lebar sidebar */
+    height: 100%;
+    background-color: #002855;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+    padding-top: 20px;
+}
+
+/* Sidebar aktif */
+.sidebar.active {
+    left: 0; /* Sidebar muncul */
+}
+
+/* Tombol hamburger muncul di layar kecil */
+.hamburger {
+    display: block;
+    cursor: pointer;
+}
+
+.sidebar .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+}
+
+.sidebar .menu ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.sidebar .menu ul a{
+    text-decoration: none;
+    background-color: #002855;
+    color: white;
+}
+
+.menu ul a:nth-child(4) li {
+    background-color: #00509e;
+    padding-left: 20px;
+    margin-left: 0;
+}
+
+.sidebar .menu ul li span {
+    margin: 0px 0px 100px 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+.sidebar .menu ul li img {
+    width: 20px;
+    margin: 0;
+}
+
+.sidebar .menu ul li:hover {
+    background-color: #00509e;
+    padding-left: 10px;
+    transform: translateX(10px); /* Move to the right by 10px */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Main Content */
+.main-content {
+    width: calc(100% - 250px); /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+    margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+}
+
+.main-content header h1 {
+    font-size: 24px;
+    color: #00509e;
+}
+
+.main-content header .logout {
+    text-decoration: none;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between; /* Atur jarak antara elemen kiri dan kanan */
+    align-items: center; /* Pusatkan elemen secara vertikal */
+    padding: 10px 20px; /* Tambahkan padding untuk ruang */
+    background-color: #f5f5f5; /* Warna latar belakang */
+    border-bottom: 1px solid #ddd; /* Tambahkan garis bawah */
+}
+
+/* Judul di header */
+.header h1 {
+    font-size: 18px; /* Ukuran font lebih kecil */
+    margin: 0;
+    color: #002855; /* Warna teks */
+}
+
+/* Tombol logout */
+.header .logout {
+    color: red;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.welcome-message {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #eaf4fe;
+    border-left: 4px solid #00509e;
+}
+
+#prodi {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 10px;
+    width: 500px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.paket-semester {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    width: 500px;
+    justify-content: space-between;
+}
+
+.paket-semester li {
+    margin-bottom: 20px;
+}
+
+.dropdown-matakuliah {
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.table-matakuliah {
+    display: none;
+}
+
+.table-matakuliah.active {
+    display: table;
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse; /* Hilangkan celah antara border */
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Gaya dasar tabel */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Hilangkan celah antara border */
+    margin: 20px 0;
+    font-size: 16px;
+    text-align: left;
+}
+
+/* Gaya header tabel */
+thead tr {
+    background-color: #00509e;
+    color: #fff;
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ddd; /* Tambahkan garis pembatas */
+}
+
+/* Gaya baris tabel */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Warna latar belakang baris ganjil */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff; /* Warna latar belakang baris genap */
+}
+
+/* Efek hover */
+tbody tr:hover {
+    background-color: #f1f1f1; /* Warna saat dihover */
+    cursor: pointer;
+}
+
+
+
+/* Responsif untuk layar kecil */
+@media screen and (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 50%;
+    }
+
+    /* Main content */
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+/* Teks rata tengah pada header */
+th {
+    text-align: center;
+}
+
+/* Hamburger saat sidebar aktif */
+.sidebar-active .hamburger {
+    position: fixed; /* Tetap di posisi atas */
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    left: 20px; /* Posisikan di sebelah kiri */
+    top: 20px; /* Posisikan di bagian atas */
+    background-color: #002855; /* Warna latar belakang tombol */
+    color: #fff; /* Warna ikon */
+    padding: 10px; /* Berikan ruang pada tombol */
+    border-radius: 50%; /* Bentuk tombol bulat */
+    border: none;
+}
+
+/* Sidebar di layar besar */
+@media screen and (min-width: 769px) {
+    .sidebar {
+        position: fixed; /* Sidebar tetap di tempat */
+        width: 250px; /* Lebar sidebar */
+        height: 100%;
+        left: 0; /* Selalu terlihat di layar besar */
+    }
+
+    .main-content {
+        margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    }
+
+    /* Default: Tombol hamburger tersembunyi di layar besar */
+    .hamburger {
+        display: none;
+    }
+}

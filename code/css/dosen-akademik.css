@@ -1,0 +1,321 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Default hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #002855;
+  color: #fff;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 10px 0;
+}
+
+.sidebar.active {
+  left: 0; /* Visible when active */
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.sidebar .menu ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul a{
+  text-decoration: none;
+  color: white;
+  
+}
+
+.sidebar ul a:nth-child(7) li{
+  background-color: #00509e;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+  padding-left: 10px;
+  transform: translateX(10px); /* Move to the right by 10px */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.sidebar .menu ul li span {
+  margin-left: 10px;
+}
+
+.sidebar .menu ul li img {
+  width: 20px;
+}
+
+.sidebar .menu ul li:nth-child(7),
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 10px 20px;
+  overflow-y: auto;
+}
+
+.main-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.main-content header h1 {
+  font-size: 25px;
+  color: #00509e;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  font-weight: 600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Keterangan */
+.description {
+  background-color: white;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.description p {
+  text-decoration: none;
+  color: #233255;
+  margin-bottom: 10px; /* Beri jarak antar link */
+  font-size: 14px;
+  display: block; 
+}
+
+/* Program Studi Selection Form */
+#prodi {
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10px;
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+#prodi select {
+  width: 300px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+#prodi button {
+  padding: 5px 10px;
+  background-color: #00509e;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#prodi button:hover {
+  background-color: #003366;
+}
+
+/* Semester Course Package */
+.paket-semester {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.paket-semester li {
+  margin-bottom: 10px;
+}
+
+.dropdown-matakuliah {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.table-matakuliah {
+  display: none;
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse; /* Remove gap between borders */
+  text-align: center;
+}
+
+.table-matakuliah.active {
+  display: table;
+}
+
+.table-matakuliah th,
+.table-matakuliah td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.table-matakuliah thead tr {
+  background-color: #00509e;
+  color: #fff;
+}
+
+.table-matakuliah tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.table-matakuliah tbody tr:nth-child(even) {
+  background-color: #fff;
+}
+
+.table-matakuliah tbody tr:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+/* Action Buttons (Optional actions) */
+.actions {
+  display: none;
+}
+
+.actions.active {
+  display: block;
+  margin-top: 10px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.actions button:hover {
+  background-color: #e67e22; /* Darker color on hover */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Larger shadow */
+}
+
+.actions button:nth-child(1) {
+  background-color: #00509e;
+  color: #fff;
+}
+
+.actions button:nth-child(2) {
+  background-color: #ff4d4d;
+  color: #fff;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #233255;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+      flex-direction: column;
+  }
+
+  .sidebar {
+      width: 100%;
+      left: -100%;
+  }
+
+  .sidebar.active {
+      left: 0;
+  }
+
+  .main-content {
+      margin-left: 0;
+      padding: 10px;
+  }
+
+  .main-content header {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .main-content header h1 {
+      font-size: 20px;
+  }
+
+  .hamburger {
+      display: block;
+      background-color: #002855;
+      color: #fff;
+      padding: 10px;
+      border-radius: 50%;
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 1100;
+      border: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .sidebar {
+      left: 0;
+  }
+
+  .hamburger {
+      display: none;
+  }
+}

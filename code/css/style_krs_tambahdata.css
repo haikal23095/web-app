@@ -1,0 +1,353 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Mahasiswa */
+
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Tersembunyi secara default */
+  width: 250px; /* Lebar sidebar */
+  height: 100%;
+  background-color: #002855;
+  color: #fff;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+  padding-top: 20px;
+}
+
+/* Sidebar aktif */
+.sidebar.active {
+  left: 0; /* Sidebar muncul */
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.sidebar .menu a {
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar .menu ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.sidebar .menu ul li span {
+  margin: 0px 0px 100px 10px;
+  position: relative;
+  bottom: 5px;
+}
+
+.sidebar .menu ul li img {
+  width: 20px;
+  margin: 0;
+}
+
+.menu ul a:nth-child(4) li {
+  background-color: #00509e;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+  padding-left: 10px;
+}
+
+/* Main Content */
+.main-content {
+  width: calc(100% - 250px); /* Sesuaikan dengan lebar sidebar */
+  padding: 20px;
+  margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+  overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+}
+
+.main-content header h1 {
+  font-size: 25px;
+  color: #00509e;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between; /* Atur jarak antara elemen kiri dan kanan */
+  align-items: center; /* Pusatkan elemen secara vertikal */
+  padding: 10px 20px; /* Tambahkan padding untuk ruang */
+  background-color: #f5f5f5; /* Warna latar belakang */
+  border-bottom: 1px solid #ddd; /* Tambahkan garis bawah */
+  margin-bottom: 20px;
+}
+
+.main-content header .logout {
+  text-decoration: none;
+  color: #ff4d4d;
+  font-weight: bold;
+}
+
+/* Judul di header */
+.header h1 {
+  font-size: 18px; /* Ukuran font lebih kecil */
+  margin: 0;
+  color: #002855; /* Warna teks */
+}
+
+/* Tombol logout */
+.header .logout {
+  color: red;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+.form-section {
+  background: #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header2 {
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 80%;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-add {
+  background-color: #34495e;
+}
+
+.btn-add:hover {
+  background-color: #1c2833;
+  transform: scale(0.98);
+}
+.btn-cancel {
+  background-color: #e74c3c;
+}
+
+.btn-cancel:hover {
+  background-color: #a01818;
+  transform: scale(0.98);
+}
+/* Media Query untuk ukuran layar HP */
+@media screen and (max-width: 768px) {
+  /* Layout container */
+  .container {
+      flex-direction: column;
+  }
+
+  /* Sidebar */
+  .sidebar {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+  }
+
+  .sidebar .menu ul li {
+      padding: 8px 0;
+      font-size: 14px;
+  }
+
+  /* Avatar profil */
+  .sidebar .profile-section .avatar {
+      width: 60px;
+      height: 60px;
+  }
+
+  /* Main content */
+  .main-content {
+      width: 100%;
+      padding: 10px;
+  }
+
+  .main-content header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+  }
+
+  .main-content header h1 {
+      font-size: 20px;
+  }
+
+  .main-content header .logout {
+      font-size: 14px;
+  }
+
+  .welcome-message {
+      font-size: 14px;
+  }
+
+  /* Content grid: jadi kolom tunggal */
+  .content-grid {
+      flex-direction: column;
+      gap: 15px;
+  }
+
+  .content-grid > div {
+      padding: 10px;
+  }
+
+  /* Kotak Pesan button */
+  .kotak-pesan button {
+      padding: 8px 12px;
+      font-size: 14px;
+  }
+
+  /* Pengumuman & Diskusi terbaru */
+  .diskusi-terbaru ul li, .pengumuman ul li {
+      font-size: 14px;
+  }
+}
+
+/* Hamburger saat sidebar aktif */
+.sidebar-active .hamburger {
+  position: fixed; /* Tetap di posisi atas */
+  z-index: 1000; /* Pastikan berada di atas elemen lain */
+  left: 20px; /* Posisikan di sebelah kiri */
+  top: 20px; /* Posisikan di bagian atas */
+  background-color: #002855; /* Warna latar belakang tombol */
+  color: #fff; /* Warna ikon */
+  padding: 10px; /* Berikan ruang pada tombol */
+  border-radius: 50%; /* Bentuk tombol bulat */
+  border: none;
+}
+
+@media screen and (max-width: 768px) {
+  /* Sidebar: default tersembunyi */
+  .sidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 40%;
+      height: 100%;
+      background-color: #002855;
+      color: #fff;
+      transition: 0.3s;
+      z-index: 1000;
+      overflow-y: auto;
+      padding-top: 20px;     
+  }
+
+  /* Sidebar terlihat saat aktif */
+  .sidebar.active {
+      left: 0;
+  }
+  .sidebar.active .menu ul {
+      padding: 10px 0;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      
+  }
+
+  /* Tombol hamburger muncul di layar kecil */
+  .hamburger {
+      display: block;
+  }
+
+  /* Main content */
+  .main-content {
+      margin-left: 0;
+      padding: 10px;
+  }
+}
+
+/* Default: Tombol hamburger tersembunyi di layar besar */
+.hamburger {
+  display: none;
+}
+
+/* Media Query untuk layar kecil */
+@media screen and (max-width: 768px) {
+  .hamburger {
+      display: block; /* Tampilkan tombol hamburger */
+  }
+
+  .header h1 {
+      font-size: 16px; /* Kurangi ukuran font pada layar kecil */
+  }
+
+  .logout {
+      font-size: 12px; /* Kurangi ukuran font logout */
+  }
+}
+
+
+/* Sidebar di layar besar */
+@media screen and (min-width: 769px) {
+  .sidebar {
+      position: fixed; /* Sidebar tetap di tempat */
+      width: 250px; /* Lebar sidebar */
+      height: 100%;
+      left: 0; /* Selalu terlihat di layar besar */
+  }
+
+  .main-content {
+      margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+  }
+
+  /* Default: Tombol hamburger tersembunyi di layar besar */
+  .hamburger {
+      display: none;
+  }
+}

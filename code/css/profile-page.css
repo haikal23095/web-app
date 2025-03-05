@@ -1,0 +1,349 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Container Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Tersembunyi secara default */
+    width: 250px; /* Lebar sidebar */
+    height: 100%;
+    background-color: #002855;
+    color: #fff;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+    padding-top: 20px;
+}
+
+/* Sidebar aktif */
+.sidebar.active {
+    left: 0; /* Sidebar muncul */
+}
+
+.sidebar .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+}
+
+.sidebar .menu ul li {
+    padding: 10px 0;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.sidebar .menu ul a{
+    text-decoration: none;
+    background-color: #002855;
+    color: white;
+}
+
+.sidebar .menu ul li span {
+    margin: 0px 0px 100px 10px;
+    position: relative;
+    bottom: 5px;
+}
+
+.sidebar .menu ul li img {
+    width: 20px;
+    margin: 0;
+}
+
+.menu ul a:nth-child(3) li {
+    background-color: #00509e;
+    padding-left: 20px;
+    margin-left: 0;
+}
+
+.sidebar .menu ul li:hover {
+    background-color: #00509e;
+    padding-left: 10px;
+    transform: translateX(10px); /* Move to the right by 10px */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Main Content */
+.main-content {
+    width: calc(100% - 250px); /* Sesuaikan dengan lebar sidebar */
+    padding: 20px;
+    margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Atur jarak antara elemen kiri dan kanan */
+    align-items: center; /* Pusatkan elemen secara vertikal */
+    padding: 10px 20px; /* Tambahkan padding untuk ruang */
+    background-color: #f5f5f5; /* Warna latar belakang */
+    border-bottom: 1px solid #ddd; /* Tambahkan garis bawah */
+}
+
+.header h2{
+    font-size: 18px; /* Ukuran font lebih kecil */
+    margin: 0;
+    color: #00509e;
+}
+
+.main-content header .logout {
+    text-decoration: none;
+    color: #ff4d4d;
+    font-weight: bold;
+}
+
+/* Tombol logout */
+.header .logout {
+    color: red;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.block-data{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 1000px;
+    gap: 20px;
+}
+
+.data-left{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-left img{
+    width: 200px;
+    height: 250px;
+}
+
+.data-left input{
+    display: none;
+}
+
+.data-left label{
+    cursor: pointer;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    color: #fff;
+    background-color: #002855;
+    border-radius: 5px;
+
+}
+
+.data-utama{
+    background-color: #eee;
+    border: 2 px #0000 solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    /* padding: 0px 10px 0px 0px; */
+}
+
+.data-utama h4{
+    background-color: #ddd;
+    margin: 0;
+    padding: 10px;
+}
+.data-utama-list{
+    padding: 10px;
+}
+
+.list-item-data-utama{
+    padding-top: 10px;
+}
+
+.data-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.data-tambahan {
+    margin-bottom: 20px;
+    background-color: #eee;
+    border: 2 px #0000 solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.data-tambahan h4{
+    background-color: #ddd;
+    margin: 0;
+    padding: 10px;
+}
+
+.data-tambahan-list{
+    padding: 10px;
+}
+
+.list-item-data-tambahan{
+    padding-top: 10px;
+}
+
+.data-right p{
+    margin-bottom: 15px;
+}
+
+.data-right button{
+    background-color: #002855;
+    color: #fff;
+    padding: 8px;
+    width: 90px;
+    border-radius: 5px;
+
+}
+
+/* Media Query untuk ukuran layar HP */
+@media screen and (max-width: 768px) {
+    /* Layout container */
+    .container {
+        flex-direction: column;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .sidebar .menu ul li {
+        padding: 8px 0;
+        font-size: 14px;
+    }
+
+    /* Avatar profil */
+    .sidebar .profile-section .avatar {
+        width: 60px;
+        height: 60px;
+    }
+
+    /* Main content */
+    .main-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .main-content header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .main-content header .logout {
+        font-size: 14px;
+    }
+
+/* Hamburger saat sidebar aktif */
+.sidebar-active .hamburger {
+    position: fixed; /* Tetap di posisi atas */
+    z-index: 1000; /* Pastikan berada di atas elemen lain */
+    left: 20px; /* Posisikan di sebelah kiri */
+    top: 20px; /* Posisikan di bagian atas */
+    background-color: #002855; /* Warna latar belakang tombol */
+    color: #fff; /* Warna ikon */
+    padding: 10px; /* Berikan ruang pada tombol */
+    border-radius: 50%; /* Bentuk tombol bulat */
+    border: none;
+}
+
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 40%;
+        height: 100%;
+        background-color: #002855;
+        color: #fff;
+        transition: 0.3s;
+        z-index: 1000;
+        overflow-y: auto;
+        padding-top: 20px;     
+    }
+
+    /* Sidebar terlihat saat aktif */
+    .sidebar.active {
+        left: 0;
+    }
+    .sidebar.active .menu ul {
+        padding: 10px 0;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        
+    }
+
+    /* Tombol hamburger muncul di layar kecil */
+    .hamburger {
+        display: block;
+    }
+
+    /* Main content */
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+}
+
+/* Default: Tombol hamburger tersembunyi di layar besar */
+.hamburger {
+    display: none;
+}
+
+/* Media Query untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block; /* Tampilkan tombol hamburger */
+    }
+
+    .logout {
+        font-size: 12px; /* Kurangi ukuran font logout */
+    }
+}
+
+
+/* Sidebar di layar besar */
+@media screen and (min-width: 769px) {
+    .sidebar {
+        position: fixed; /* Sidebar tetap di tempat */
+        width: 250px; /* Lebar sidebar */
+        height: 100%;
+        left: 0; /* Selalu terlihat di layar besar */
+    }
+
+    .main-content {
+        margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
+    }
+
+    /* Default: Tombol hamburger tersembunyi di layar besar */
+    .hamburger {
+        display: none;
+    }
+}

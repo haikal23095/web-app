@@ -1,0 +1,265 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Container Layout */
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Default hidden */
+  width: 250px;
+  height: 100%;
+  background-color: #002855;
+  color: #fff;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.sidebar.active {
+  left: 0; /* Visible when active */
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+}
+
+.sidebar ul a{
+  text-decoration: none;
+  color: white;
+}
+
+.sidebar .menu ul li {
+  padding: 10px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar ul a:nth-child(4) li{
+  background-color: #00509e;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+  padding-left: 10px;
+  transform: translateX(10px); /* Move to the right by 10px */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.sidebar .menu ul li span {
+  margin-left: 10px;
+}
+
+.sidebar .menu ul li img {
+  width: 20px;
+}
+
+.sidebar .menu ul li:nth-child(4),
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+}
+
+
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.main-content header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.main-content header h1 {
+  font-size: 25px;
+  color: #00509e;
+}
+
+.logout-btn {
+  background-color: #e74c3c;
+  font-weight: 600;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Description Section */
+.description {
+  background-color: white;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.description h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #233255;
+}
+
+.description p {
+  margin-bottom: 10px;
+}
+
+/* Links in Description */
+.description a {
+  text-decoration: none;
+  color: #233255;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.description a:hover {
+  text-decoration: underline;
+}
+
+/* Photo Section */
+.foto {
+  display: flex;
+  justify-content: center; /* Pusatkan semua elemen */
+  gap: 200px; /* Beri jarak antar elemen */
+  margin-bottom: 20px;
+}
+
+.foto ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 200px; /* Ukuran lebih kecil agar lebih dekat */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.foto ul img {
+  width: 150px; /* Ukuran foto lebih kecil */
+  height: 180px;
+  border-radius: 5px;
+}
+
+.foto ul li {
+  margin-bottom: 5px; /* Jarak antar elemen dalam ul */
+}
+
+.foto ul a {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #00509e;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px; /* Ukuran teks lebih kecil agar proporsional */
+  text-align: center;
+  display: block;
+}
+
+.foto ul a:hover {
+  background-color: #003366;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #233255;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    left: -100%;
+  }
+
+  .sidebar.active {
+    left: 0;
+  }
+
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .main-content header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-content header h1 {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: block;
+    background-color: #002855;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    border: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .sidebar {
+    left: 0;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}

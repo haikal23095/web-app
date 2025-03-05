@@ -1,0 +1,260 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; 
+}
+
+p, span, td, li {
+  font-weight: 400; 
+}
+
+button {
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 20%; 
+  height: 100%;
+  background-color: #002855; 
+  color: #fff;
+  transition: 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.sidebar .profile-section span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sidebar .menu ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.sidebar .menu ul li {
+  display: flex; 
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.sidebar .menu ul li img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.sidebar .menu ul li span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e; 
+}
+
+.sidebar .menu ul li.active {
+  background-color: #ffcc00; 
+  color: #002855; 
+}
+
+.main-content {
+  margin-left: 20%; 
+  flex-grow: 1; 
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow-y: auto; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #233255;
+}
+
+.header .logout {
+  text-decoration: none;
+  font-size: 14px;
+  color: #233255;
+  font-weight: bold;
+}
+
+.description {
+  background-color: #f7f7f7;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #555555;
+}
+
+.semester-links {
+  margin-bottom: 15px;
+}
+
+.semester-links a {
+  text-decoration: none;
+  color: #233255;
+  font-weight: bold;
+  margin-bottom: 10px; 
+  font-size: 14px;
+}
+
+.semester-links a:hover {
+  text-decoration: underline;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.table-container {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.table-container[style*="display: block"] {
+  opacity: 1;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #eaeaea;
+}
+
+th {
+  background-color: #f0f0f0;
+  color: #333333;
+}
+
+td {
+  color: #555555;
+}
+
+tr:hover {
+  background-color: #f7f7f7;
+}
+
+.btn-submit {
+  background-color: #233255; /* Warna tombol */
+  color: #ffffff; /* Warna teks putih */
+  padding: 10px 20px; /* Padding */
+  border: none; /* Hapus border */
+  border-radius: 5px; /* Sudut membulat */
+  font-size: 16px; /* Ukuran font */
+  font-weight: bold; /* Tebal teks */
+  cursor: pointer; /* Ubah kursor menjadi pointer */
+  transition: background-color 0.3s ease; /* Efek transisi */
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-submit:hover {
+  background-color: #1a2743; /* Warna saat hover */
+}
+
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 15px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  table th, table td {
+    font-size: 12px;
+  }
+
+  .btn-tambahkan {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #002855;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  background: #00509e;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 70%; 
+      left: -70%; 
+  }
+
+  .sidebar.active {
+      left: 0; 
+  }
+
+  .main-content {
+      margin-left: 0; 
+  }
+
+  .hamburger {
+      display: block; 
+  }
+}
+

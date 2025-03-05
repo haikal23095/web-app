@@ -1,0 +1,233 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600; 
+}
+
+p, span, td, li {
+  font-weight: 400; 
+}
+
+button {
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 20%; 
+  height: 100%;
+  background-color: #002855; 
+  color: #fff;
+  transition: 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.sidebar .profile-section span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sidebar .menu ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.sidebar .menu ul li {
+  display: flex; 
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.sidebar .menu ul li img {
+  width: 20px; 
+  margin-right: 10px;
+}
+
+.sidebar .menu ul li span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e; 
+}
+
+.sidebar .menu ul li.active {
+  background-color: #00509e; 
+  color: #002855; 
+}
+
+.result-container {
+  margin-left: 20%; 
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  overflow-y: auto;
+  flex: 1; 
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #233255;
+}
+
+.header .logout {
+  text-decoration: none;
+  font-size: 14px;
+  color: #233255;
+  font-weight: bold;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.result-section {
+  padding: 20px;
+  background-color: #f9f9f9; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  margin-bottom: 20px; 
+  border-left: 5px solid #4caf50; 
+  font-size: 12PX;
+}
+
+.result-section.failure {
+  border-left: 5px solid #f44336; 
+  background-color: #fbe9e9; 
+}
+
+.result-section h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #233255;
+  margin-bottom: 10px;
+}
+
+.result-section ul {
+  list-style: disc; 
+  padding-left: 20px;
+  margin: 0;
+  color: #555; 
+}
+
+.result-section ul li {
+  margin-bottom: 5px; 
+}
+
+.btn-back {
+  display: block;
+  width: fit-content;
+  margin: 20px auto 0 auto;
+  padding: 10px 15px;
+  background-color: #233255;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-back:hover {
+  background-color: #1a2540;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 70%;
+      left: -70%; 
+  }
+
+  .sidebar.active {
+      left: 0; 
+  }
+
+  .result-container {
+      margin-left: 0; 
+  }
+}
+
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background: #002855;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hamburger:hover {
+  background: #00509e;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+      width: 70%; 
+      left: -70%; 
+  }
+
+  .sidebar.active {
+      left: 0; 
+  }
+
+  .main-content {
+      margin-left: 0; 
+  }
+
+  .hamburger {
+      display: block; 
+  }
+}
+
+

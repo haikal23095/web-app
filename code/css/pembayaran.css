@@ -1,0 +1,253 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;    
+}
+
+p, span, td, li {
+    font-weight: 400; 
+}
+  
+button {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 500;
+}
+  
+.container {
+    display: flex;
+    height: 100vh;
+}
+  
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0; 
+  width: 20%; 
+  height: 100%;
+  background-color: #002855; 
+  color: #fff;
+  transition: 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+.sidebar .profile-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar .profile-section .avatar {
+  width: 80px;
+  height: 80px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+.sidebar .profile-section span {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.sidebar .menu ul {
+  list-style: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+.sidebar .menu ul li {
+  display: flex; 
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.sidebar .menu ul li img {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.sidebar .menu ul li span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.menu ul a:nth-child(10) li {
+  background-color: #00509e;
+  padding-left: 20px;
+  margin-left: 0;
+}
+
+.sidebar .menu ul li:hover {
+  background-color: #00509e;
+  padding-left: 10px;
+  transform: translateX(10px); /* Move to the right by 10px */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.sidebar .menu ul li.active {
+  background-color: #00509e; 
+  color: #f7f9fc; 
+}
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 20%; 
+    padding: 20px;
+    background-color: #f7f9fc;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    color: #34495e;
+}
+
+.header .logout {
+    text-decoration: none;
+    color: #233255;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* Info Section */
+.info-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.info-section .keterangan strong {
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.info-section p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Student Info */
+.student-info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.student-info td {
+    padding: 5px;
+    font-size: 16px;
+    color: #555;
+}
+
+.student-info strong {
+    color: #233255;
+}
+
+.student-info span {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Pembayaran Section */
+.pembayaran h2 {
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #34495e;
+    text-align: center;
+}
+.pembayaran p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Payment Button */
+.payment-button {
+    display: block;
+    width: 320px; /* Tentukan lebar tombol */
+    padding: 10px 20px;
+    background-color: #233255;
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    margin: 10px auto; /* Pusatkan tombol secara horizontal */
+    transition: background-color 0.3s ease;
+}
+
+
+.payment-button:hover {
+    background-color: #1c283c;
+}
+
+  .hamburger {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    background: #002855;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .hamburger:hover {
+    background: #00509e;
+  }
+  
+
+  @media (max-width: 768px) {
+    .sidebar {
+        width: 70%; 
+        left: -70%; 
+    }
+  
+    .sidebar.active {
+        left: 0; 
+    }
+  
+    .main-content {
+        margin-left: 0; 
+    }
+  
+    .hamburger {
+        display: block; 
+    }
+  }
+  
+  
+  

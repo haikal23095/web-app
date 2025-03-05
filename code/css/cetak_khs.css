@@ -1,0 +1,103 @@
+/* Reset */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container-cetak {
+    display: flex;
+    height: 100vh;
+}
+
+.main-content-cetak{
+    width: 100%;
+    padding: 20px;
+    margin-left: 25px;
+    color: #000;
+}
+
+.header-cetak {
+    display: flex;
+    justify-content: space-between; /* Atur jarak antara elemen kiri dan kanan */
+    background-color: #f5f5f5; /* Warna latar belakang */
+}
+
+.content-grid-cetak {
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.content-grid-cetak > div {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.khs-semester {
+    flex: 1;
+    margin-top: 15px;
+}
+
+.khs-semester > table {
+    width: 100%;
+    align-items: center;
+    font-size: 25px;
+}
+
+.user-profile-cetak-khs {
+    flex: 1;
+}
+
+.user-profile-cetak-khs > table {
+    padding-top: 10px;
+}
+
+.table-cetak-khs > table {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    border-collapse: collapse;
+    border: #000 1px solid;
+}
+
+.table-cetak-khs > table th {
+    background-color: gray;
+    border: #000 1px solid;
+}
+
+.khs-cetak > table {
+    font-weight: bold;
+}
+
+.ttd {
+    float: right;
+    width: auto;
+    text-align: center;
+}
+
+.ttd td:nth-child(2), 
+.ttd td:nth-child(3) {
+    padding-left: 50px;
+}
+
+.logo-utm {
+    width: 100px;
+}
+
+.univ {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.fakultas {
+    font-size: 27px;
+}
