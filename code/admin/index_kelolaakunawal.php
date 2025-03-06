@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
 }
 
 include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
@@ -9,7 +9,7 @@ include_once(BASEPATH .  "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 if ($_SESSION['Level'] != 'admin') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
@@ -20,7 +20,7 @@ if ($_SESSION['Level'] != 'admin') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
-    <link rel="stylesheet" href="../css/style_kelolaakunawal.css">
+    <link rel="stylesheet" href="/css/style_kelolaakunawal.css">
 </head>
 <body>
     <div class="container">
@@ -59,19 +59,17 @@ if ($_SESSION['Level'] != 'admin') {
             <section class="buttons">
                 <a href="index_akundosen.php">
                     <div class="button">
-                        <button><img src="../assets/icon-sidebar/admin/profile.png" alt="Dosen" class="icon"></button>
-                            <h3>Dosen</h3>
-                        
+                        <img src="../assets/icon-sidebar/admin/profile.png" alt="Dosen" class="icon">
+                        <h3>Dosen</h3>
                     </div>
                 </a>
                 
                 <a href="../admin/index_akunmahasiswa.php">
                     <div class="button">
-                        <button><img src="../assets/icon-sidebar/mahasiswa/profile.png" alt="Mahasiswa" class="icon"></button>
-                            <h3>Mahasiswa</h3>
+                        <img src="../assets/icon-sidebar/mahasiswa/profile.png" alt="Mahasiswa" class="icon">
+                        <h3>Mahasiswa</h3>
                     </div>
                 </a>
-                
             </section>
         </main>
     </div>

@@ -1,15 +1,15 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
 }
 
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH .  "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 if ($_SESSION['Level'] != 'mahasiswa') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 ?>

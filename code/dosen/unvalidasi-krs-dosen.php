@@ -2,13 +2,13 @@
 session_start();
 
 // Include necessary files
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH . "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 // Ensure the user is logged in
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 

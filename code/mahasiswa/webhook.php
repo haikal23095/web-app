@@ -1,6 +1,6 @@
 <?php
 // Include dependencies
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH . "/database.php");
 include_once(BASEPATH . "/functions.php");
 

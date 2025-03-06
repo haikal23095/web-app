@@ -130,10 +130,18 @@ body {
 .buttons {
   display: flex;
   justify-content: space-evenly;
+  
+}
+
+
+.buttons a {
+  text-decoration: none;
+  color: white;
   cursor: pointer;
 }
 
-.buttons a {
+.buttons .button h3{
+  border: none;
   text-decoration: none;
 }
 

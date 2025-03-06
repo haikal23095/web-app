@@ -1,14 +1,14 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
 include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 
 if ($_SESSION['Level'] != 'dosen') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 

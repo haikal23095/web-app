@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
@@ -10,7 +10,7 @@ include_once(BASEPATH . "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 if ($_SESSION['Level'] != 'dosen') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 

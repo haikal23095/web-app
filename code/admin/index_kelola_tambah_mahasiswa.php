@@ -2,15 +2,15 @@
 $page = "akun-mahasiswa-tambah";
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
 }
 
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH .  "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 if ($_SESSION['Level'] != 'admin') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
@@ -104,26 +104,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </header>
             <section class="form-section">
                 <h2>Tambah Data Mahasiswa</h2>
-                <form action="" method="POST" class="form-buttons">
-                        <button type="submit" class="btn-add">Tambah</button>
-                        <a href="index_akunmahasiswa.php"><button type="button" class="btn-cancel">Batal</button></a>
-                </form>
-                <form id="dosenForm" action="index_kelola_tambah_mahasiswa.php" method="POST">
-                    <d class="form-group">
+                <form id="mahasiswaForm" action="index_kelola_tambah_mahasiswa.php" method="POST">
+                    <button type="submit" class="btn-add">Tambah</button>
+                    <a href="index_akunmahasiswa.php"><button type="button" class="btn-cancel">Batal</button></a>
+
                     <label for="nim">NIM:</label>
-                    <input type="number" id="nim" name="nim" required><br><br>
+                    <input type="number" id="nim" name="nim" required>
 
                     <label for="nama_mahasiswa">Nama Mahasiswa:</label>
-                    <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" required><br><br>
+                    <input type="text" id="nama_mahasiswa" name="nama_mahasiswa" required>
 
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required><br><br>
+                    <input type="password" id="password" name="password" required>
 
                     <label for="alamat_mahasiswa">Alamat Mahasiswa:</label>
-                    <textarea id="alamat_mahasiswa" name="alamat_mahasiswa" required></textarea><br><br>
+                    <textarea id="alamat_mahasiswa" name="alamat_mahasiswa" required></textarea>
                     
                     <label for="telp">No HP:</label>
-                    <input type="text" id="telp" name="telp" required pattern="\d{12}" title="Harus 12 digit angka"><br><br>
+                    <input type="text" id="telp" name="telp" required pattern="\d{12}" title="Harus 12 digit angka">
 
                     <label for="ukt">Golongan UKT:</label>
                     <select id="ukt" name="ukt" required>
@@ -140,16 +138,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         } else {
                             echo "<option value=''>Tidak ada program studi</option>";
                         }
-
                         DB->close();
                         ?>
-                    </select><br><br>
+                    </select>
 
                     <label for="jenis_kelamin">Jenis Kelamin Mahasiswa:</label>
                     <select id="jenis_kelamin" name="jenis_kelamin" required>
                         <option value="L">L</option>
                         <option value="P">P</option>
-                    </select><br><br>
+                    </select>
 
                     <label for="prodi">Program Studi:</label>
                     <select id="prodi" name="prodi" required>
@@ -166,12 +163,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         } else {
                             echo "<option value=''>Tidak ada program studi</option>";
                         }
-
                         DB->close();
                         ?>
-                    </select><br><br>
-
-                    
+                    </select>
                 </form>
             </section>
         </main>

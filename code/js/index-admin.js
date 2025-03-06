@@ -7,3 +7,8 @@ hamburger.addEventListener("click", () => {
     sidebar.classList.toggle("active");
     document.body.classList.toggle('sidebar-active');
 });
+
+const clickProfile = document.getElementsByClassName('avatar')[0]
+clickProfile.addEventListener('click', function(){
+    window.location.href = 'profile_admin.php';
+})

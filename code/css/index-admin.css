@@ -43,12 +43,13 @@ body {
     margin-bottom: 30px;
 }
 
-.sidebar .profile-section .avatar {
+.profile-section .avatar {
     width: 80px;
     height: 80px;
     background-color: #ccc;
     border-radius: 50%;
     margin: 0 auto 10px auto;
+    cursor: pointer;
 }
 
 .sidebar .menu a {

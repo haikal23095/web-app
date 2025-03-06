@@ -3,12 +3,12 @@ session_start();
 
 // Mengecek apakah pengguna sudah login dan levelnya adalah 'admin'
 if (!isset($_SESSION["user"]) || $_SESSION['Level'] != 'admin') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
 // Menyertakan file konfigurasi dan koneksi ke database
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH . "/database.php");
 
 // Menampilkan error untuk memudahkan debugging

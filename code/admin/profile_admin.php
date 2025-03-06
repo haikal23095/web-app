@@ -1,17 +1,17 @@
 <?php 
 session_start();
 if (!isset($_SESSION["user"])) {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
-include_once($_SERVER["DOCUMENT_ROOT"] . "../config.php");
+include_once($_SERVER["DOCUMENT_ROOT"] . "/config.php");
 include_once(BASEPATH . "/database.php");
 include_once(BASEPATH . "/functions.php");
 
 // Pastikan hanya admin yang bisa mengakses
 if ($_SESSION['Level'] != 'admin') {
-    header("Location: ../loginpage.php");
+    header("Location: /loginpage.php");
     exit();
 }
 
@@ -35,7 +35,7 @@ $stmt->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/profile_admin.css">
+    <link rel="stylesheet" href="/css/profile_admin.css">
     
 </head>
 <body>
