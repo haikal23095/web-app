@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/ubah-password-dosen.css">
+    <link rel="stylesheet" href="/css/ubah-password-dosen.css">
 </head>
 <body>
     <div class="container">

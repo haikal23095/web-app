@@ -26,7 +26,7 @@ $data_krs = get_data_matkul_krs();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
-    <link rel="stylesheet" href="../css/style_krs_awal.css">
+    <link rel="stylesheet" href="/css/style_krs_awal.css">
 </head>
 <body>
     <div class="container">

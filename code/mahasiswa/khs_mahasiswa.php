@@ -40,7 +40,7 @@ if ($nim && $semester_dipilih && $semester_dipilih >= 1 && $semester_dipilih <= 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
-    <link rel="stylesheet" href="../css/khs_mahasiswa.css">
+    <link rel="stylesheet" href="/css/khs_mahasiswa.css">
 </head>
 <body>
     <div class="container">

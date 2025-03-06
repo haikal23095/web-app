@@ -10,6 +10,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  height: 100%;
 }
 
 /* Container Layout */
@@ -88,6 +89,7 @@ body {
   padding: 20px;
   margin-left: 250px; /* Sesuaikan dengan lebar sidebar */
   overflow-y: auto; /* Tambahkan overflow-y untuk menangani konten yang panjang */
+  height: auto;
 }
 
 .main-content header h1 {
@@ -131,17 +133,18 @@ body {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  height: 100%;
+  
 }
 
 .header2 {
   margin-bottom: 30px;
 }
 
-form {
+#mahasiswaForm {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 10px;
 }
 
 .form-group label {
@@ -168,10 +171,6 @@ button {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-}
-
-button .btn-add {
-  
 }
 
 .btn-add {

@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Akademik UTM</title>
-    <link rel="stylesheet" href="../css/style_kelola_tambah_mahasiswa.css">
+    <link rel="stylesheet" href="/css/style_kelola_tambah_mahasiswa.css">
 </head>
 <body>
     <div class="container">
@@ -102,7 +102,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <button id="hamburger" class="hamburger">&#9776;</button> <!-- Tombol Hamburger -->
                 <a href="../logout.php" class="logout">Log Out</a>
             </header>
-            <section class="form-section">
+            <div class="form-section">
                 <h2>Tambah Data Mahasiswa</h2>
                 <form id="mahasiswaForm" action="index_kelola_tambah_mahasiswa.php" method="POST">
                     <button type="submit" class="btn-add">Tambah</button>
@@ -122,6 +122,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     
                     <label for="telp">No HP:</label>
                     <input type="text" id="telp" name="telp" required pattern="\d{12}" title="Harus 12 digit angka">
+                    
+                    <label for="prodi">Program Studi:</label>
+                    <select id="prodi" name="prodi" required>
+                        <?php
+                        // Ambil data program studi dari database
+                        $sql = "SELECT ID_Prodi, Nama_Prodi FROM Prodi";
+                        $result = DB->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            // Output data dari setiap baris
+                            while($row = $result->fetch_assoc()) {
+                                echo "<option value='" . $row["ID_Prodi"] . "'>" . $row["Nama_Prodi"] . "</option>";
+                            }
+                        } else {
+                            echo "<option value=''>Tidak ada program studi</option>";
+                        }
+                        DB->close();
+                        ?>
+                    </select>
 
                     <label for="ukt">Golongan UKT:</label>
                     <select id="ukt" name="ukt" required>
@@ -142,35 +161,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         ?>
                     </select>
 
+                    <p><?= 'anjay';?></p>
+
                     <label for="jenis_kelamin">Jenis Kelamin Mahasiswa:</label>
                     <select id="jenis_kelamin" name="jenis_kelamin" required>
                         <option value="L">L</option>
                         <option value="P">P</option>
                     </select>
 
-                    <label for="prodi">Program Studi:</label>
-                    <select id="prodi" name="prodi" required>
-                        <?php
-                        // Ambil data program studi dari database
-                        $sql = "SELECT ID_Prodi, Nama_Prodi FROM Prodi";
-                        $result = DB->query($sql);
+                    
 
-                        if ($result->num_rows > 0) {
-                            // Output data dari setiap baris
-                            while($row = $result->fetch_assoc()) {
-                                echo "<option value='" . $row["ID_Prodi"] . "'>" . $row["Nama_Prodi"] . "</option>";
-                            }
-                        } else {
-                            echo "<option value=''>Tidak ada program studi</option>";
-                        }
-                        DB->close();
-                        ?>
-                    </select>
                 </form>
-            </section>
+            </div>
         </main>
     </div>
-
     <script src="../js/index_kelola_tambah_mahasiswa.js"></script>
 </body>
 </html>
